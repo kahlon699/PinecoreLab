@@ -1,0 +1,6 @@
+@PinecoreLabApi_HostAddress = http://localhost:5241
+
+GET {{PinecoreLabApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
