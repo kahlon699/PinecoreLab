@@ -31,11 +31,13 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">PL</span>
-          </div>
-          <span className="font-bold text-gray-900 text-lg tracking-tight">
+        <Link to="/" className="flex items-center font-heading gap-1 text-xl font-bold">          
+       
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-black">
+        <img src="/icons_black.svg" alt="" className="h-8 w-8" />
+      </div>
+
+      <span className="font-display text-gray-600 text-2xl md:text-2xl  tracking-tight">
             Pinecore <span className="text-blue-600">Lab</span>
           </span>
         </Link>

@@ -14,3 +14,8 @@ PinecoreLabApi/*.user
 .DS_Store
 Thumbs.db
 *.log
+.vs/
+PinecoreLabApi/.vs/
+bin/
+obj/
+node_modules/
