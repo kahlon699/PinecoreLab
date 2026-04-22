@@ -1,21 +1,27 @@
-# Frontend
-frontend/node_modules/
-frontend/dist/
-frontend/.env
-frontend/.env.local
-
-# Backend
-PinecoreLabApi/bin/
-PinecoreLabApi/obj/
-PinecoreLabApi/*.user
-*.suo
-
-# General
-.DS_Store
-Thumbs.db
+# Logs
+logs
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
 .vs/
-PinecoreLabApi/.vs/
-bin/
-obj/
-node_modules/
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/PinecoreLabApi/appsettings.json
+/PinecoreLabApi/appsettings.Development.json
