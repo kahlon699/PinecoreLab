@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PinecoreLabApi.Models;
 
-public class ContactMessage
+public class PineCoreContactMessage
 {
     public int Id { get; set; }
 

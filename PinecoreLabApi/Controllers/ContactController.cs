@@ -10,13 +10,13 @@ namespace PinecoreLabApi.Controllers;
 public class ContactController(AppDbContext db, ILogger<ContactController> logger) : ControllerBase
 {
     [HttpPost]
-    public async Task<IActionResult> Submit([FromBody] ContactMessage message)
+    public async Task<IActionResult> Submit([FromBody] PineCoreContactMessage message)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
         message.SubmittedAt = DateTime.UtcNow;
-        db.ContactMessages.Add(message);
+        db.PineCoreContactMessages.Add(message);
         await db.SaveChangesAsync();
 
         logger.LogInformation("Contact message received from {Email} at {Time}", message.Email, message.SubmittedAt);
@@ -27,7 +27,7 @@ public class ContactController(AppDbContext db, ILogger<ContactController> logge
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var messages = await db.ContactMessages
+        var messages = await db.PineCoreContactMessages
             .OrderByDescending(m => m.SubmittedAt)
             .ToListAsync();
         return Ok(messages);

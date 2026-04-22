@@ -4,8 +4,13 @@ using PinecoreLabApi.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "Pinecore Lab API", Version = "v1" });
+});
 builder.Services.AddDbContext<AppDbContext>(opt =>
-    opt.UseInMemoryDatabase("PinecoreLabDb"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddCors(opt =>
 {
@@ -19,6 +24,9 @@ builder.Services.AddCors(opt =>
 builder.Logging.AddConsole();
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseCors("AllowFrontend");
 app.UseHttpsRedirection();
