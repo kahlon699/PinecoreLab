@@ -33,15 +33,15 @@ jobs:
       - name: Build project
         run: dotnet build ./PinecoreLabApi/PinecoreLabApi.csproj --configuration Release --no-restore
 
-     # Publish project
+      # 5️⃣ Publish project
       - name: Publish project
         run: dotnet publish ./PinecoreLabApi/PinecoreLabApi.csproj -c Release -o ./publish
 
-      # Verify files
+      # 6️⃣ Verify files (important debug)
       - name: List publish files
         run: ls -R ./publish
 
-      # Deploy
+      # 7️⃣ Deploy
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
