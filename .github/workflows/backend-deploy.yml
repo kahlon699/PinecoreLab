@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
+          cache: true
 
       # 3️⃣ Restore dependencies
       - name: Restore dependencies
@@ -43,11 +44,7 @@ jobs:
             --self-contained false \
             /p:UseAppHost=false
 
-      # 6️⃣ Verify output (VERY IMPORTANT)
-      - name: List publish files
-        run: ls -R ./publish
-
-      # 7️⃣ Create deployment package (clean structure)
+      # 6️⃣ Create deployment package (clean structure)
       - name: Prepare deployment package
         run: |
           cd publish

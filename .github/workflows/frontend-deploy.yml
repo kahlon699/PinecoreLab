@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'npm'
 
       # 3️⃣ Create Vite production environment file
       - name: Setup production environment variables
@@ -74,12 +75,4 @@ jobs:
           app-name: PinecoreLabApp
           slot-name: production
           package: frontend.zip
-          clean: true
 
-      # 8️⃣ Set Startup Command (safe version)
-      - name: Configure Startup Command
-        run: |
-          az webapp config set \
-            --resource-group Resource-Marketplace \
-            --name PinecoreLabApp \
-            --startup-file "node server.js"
