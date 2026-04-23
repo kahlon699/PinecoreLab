@@ -14,17 +14,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactMessage"
+                "$ref": "#/components/schemas/PineCoreContactMessage"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactMessage"
+                "$ref": "#/components/schemas/PineCoreContactMessage"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactMessage"
+                "$ref": "#/components/schemas/PineCoreContactMessage"
               }
             }
           }
@@ -61,7 +61,7 @@
   },
   "components": {
     "schemas": {
-      "ContactMessage": {
+      "PineCoreContactMessage": {
         "required": [
           "email",
           "message",

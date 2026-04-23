@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "message",
-        "Type": "PinecoreLabApi.Models.ContactMessage",
+        "Type": "PinecoreLabApi.Models.PineCoreContactMessage",
         "IsRequired": true
       }
     ],
