@@ -24,17 +24,24 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
-          cache: true
 
-      # 3️⃣ Restore dependencies
+      # 3️⃣ Cache NuGet packages
+      - name: Cache NuGet packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ hashFiles('**/PinecoreLabApi.csproj') }}
+          restore-keys: nuget-
+
+      # 4️⃣ Restore dependencies
       - name: Restore dependencies
         run: dotnet restore ./PinecoreLabApi/PinecoreLabApi.csproj
 
-      # 4️⃣ Build project
+      # 5️⃣ Build project
       - name: Build project
         run: dotnet build ./PinecoreLabApi/PinecoreLabApi.csproj --configuration Release --no-restore
 
-      # 5️⃣ Publish project (OPTIMIZED FOR AZURE LINUX)
+      # 6️⃣ Publish project (OPTIMIZED FOR AZURE LINUX)
       - name: Publish project
         run: |
           dotnet publish ./PinecoreLabApi/PinecoreLabApi.csproj \
@@ -44,7 +51,7 @@ jobs:
             --self-contained false \
             /p:UseAppHost=false
 
-      # 6️⃣ Create deployment package (clean structure)
+      # 7️⃣ Create deployment package (clean structure)
       - name: Prepare deployment package
         run: |
           cd publish
