@@ -33,18 +33,30 @@ jobs:
       - name: Build project
         run: dotnet build ./PinecoreLabApi/PinecoreLabApi.csproj --configuration Release --no-restore
 
-      # 5️⃣ Publish project
+      # 5️⃣ Publish project (OPTIMIZED FOR AZURE LINUX)
       - name: Publish project
-        run: dotnet publish ./PinecoreLabApi/PinecoreLabApi.csproj -c Release -o ./publish
+        run: |
+          dotnet publish ./PinecoreLabApi/PinecoreLabApi.csproj \
+            -c Release \
+            -o ./publish \
+            --no-build \
+            --self-contained false \
+            /p:UseAppHost=false
 
-      # 6️⃣ Verify files (important debug)
+      # 6️⃣ Verify output (VERY IMPORTANT)
       - name: List publish files
         run: ls -R ./publish
 
-      # 7️⃣ Deploy
+      # 7️⃣ Create deployment package (clean structure)
+      - name: Prepare deployment package
+        run: |
+          cd publish
+          zip -r ../backend.zip .
+
+      # 8️⃣ Deploy to Azure App Service
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
           app-name: PinecoreLabApi
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ./publish
+          package: backend.zip

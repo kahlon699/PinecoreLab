@@ -13,6 +13,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     name: Build and Deploy Frontend
+
     steps:
       # 1️⃣ Checkout repository
       - uses: actions/checkout@v3
@@ -23,14 +24,14 @@ jobs:
         with:
           node-version: 20
 
-      # 3️⃣ Inject environment variables for Vite
+      # 3️⃣ Create Vite production environment file
       - name: Setup production environment variables
         run: |
           echo "VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}" > .env.production
           echo "VITE_WS_URL=${{ secrets.VITE_WS_URL }}" >> .env.production
           echo "VITE_WS_URL_ANDROID=${{ secrets.VITE_WS_URL_ANDROID }}" >> .env.production
           echo "VITE_WS_URL_IOS=${{ secrets.VITE_WS_URL_IOS }}" >> .env.production
-              # Add Firebase config variables
+
           echo "VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}" >> .env.production
           echo "VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}" >> .env.production
           echo "VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}" >> .env.production
@@ -38,24 +39,35 @@ jobs:
           echo "VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}" >> .env.production
           echo "VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }}" >> .env.production
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}" >> .env.production
+
       # 4️⃣ Install dependencies and build
       - name: Install dependencies and build
         run: |
           npm ci
           npm run build
 
-      # 5️⃣ Zip dist folder + server
-      - name: Zip dist folder
+      # 🔍 4.1 Verify build output (IMPORTANT DEBUG STEP)
+      - name: Verify dist folder
         run: |
-          zip -r frontend.zip dist server.js
+          ls -la
+          ls -la dist
 
-      # 6️⃣ Login to Azure
+      # 5️⃣ Prepare correct Azure deployment package
+      - name: Prepare deployment package
+        run: |
+          mkdir deploy
+          cp -r dist deploy/
+          cp server.js deploy/
+          cd deploy
+          zip -r ../frontend.zip .
+
+      # 6️⃣ Azure Login
       - name: Azure Login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      # 7️⃣ Deploy to Azure Linux App Service
+      # 7️⃣ Deploy to Azure App Service
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
@@ -63,10 +75,10 @@ jobs:
           slot-name: production
           package: frontend.zip
 
-      # 8️⃣ Set Startup Command for SPA routing
+      # 8️⃣ Set Startup Command (safe version)
       - name: Configure Startup Command
         run: |
           az webapp config set \
             --resource-group Resource-Marketplace \
             --name PinecoreLabApp \
-            --startup-file "node /home/site/wwwroot/server.js"
+            --startup-file "node server.js"

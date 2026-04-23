@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = parseInt(process.env.PORT || process.env.WEBSITES_PORT || '8080', 10);
+const PORT = Number(process.env.PORT) || 8080;
 const DIST = path.join(__dirname, 'dist');
 
 const MIME_TYPES = {
@@ -68,6 +68,6 @@ http.createServer((req, res) => {
       serveFile(INDEX);
     }
   });
-}).listen(PORT, () => {
+}).listen(PORT, '0.0.0.0', () => {
   console.log(`Frontend server running on port ${PORT}`);
 });
