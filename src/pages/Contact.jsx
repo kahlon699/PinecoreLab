@@ -42,7 +42,7 @@ export default function Contact() {
       {/* Hero */}
       <section className="pt-24 pb-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
             <p className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-3">Contact</p>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
               Let's Start a Conversation
@@ -58,9 +58,9 @@ export default function Contact() {
       {/* Content */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Left: info */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8 text-center lg:text-left">
               <div>
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h2>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -72,7 +72,7 @@ export default function Contact() {
 
               <div className="space-y-4">
                 {contactInfo.map(({ icon, label, value, href }) => (
-                  <div key={label} className="flex items-start gap-4">
+                  <div key={label} className="flex items-start gap-4 justify-center lg:justify-start">
                     <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
                       {icon}
                     </div>
