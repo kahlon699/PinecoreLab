@@ -74,6 +74,7 @@ jobs:
           app-name: PinecoreLabApp
           slot-name: production
           package: frontend.zip
+          clean: true
 
       # 8️⃣ Set Startup Command (safe version)
       - name: Configure Startup Command
