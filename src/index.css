@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 /* Class-based dark mode strategy */
 @variant dark (&:where(.dark, .dark *));
@@ -31,7 +31,7 @@
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 select-none;
+    @apply bg-sky-500 hover:bg-sky-400 active:bg-sky-600 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow-lg hover:shadow-sky-400/20 active:scale-95 select-none;
   }
 
   .btn-secondary {
@@ -81,7 +81,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent;
   }
 
   /* Glass effect */

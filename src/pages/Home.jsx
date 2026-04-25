@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react'
+﻿import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import Hero from '../components/Hero'
@@ -33,7 +33,7 @@ function CounterStat({ value, suffix, label }) {
       <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
         {count}{suffix}
       </div>
-      <div className="text-blue-200 text-sm font-medium">{label}</div>
+      <div className="text-sky-200 text-sm font-medium">{label}</div>
     </div>
   )
 }
@@ -95,7 +95,7 @@ const features = [
     ),
     title: 'Mobile-First',
     desc: 'Optimized for every screen',
-    color: 'text-blue-600 bg-blue-50 dark:bg-blue-950/40',
+    color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/40',
   },
   {
     icon: (
@@ -115,7 +115,7 @@ export default function Home() {
       <Hero />
 
       {/* Stats counter */}
-      <section className="bg-blue-700 py-16">
+      <section className="bg-sky-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             {counterStats.map((stat) => (
@@ -154,7 +154,7 @@ export default function Home() {
             viewport={{ once: true, margin: '-80px' }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
               What We Build
             </span>
             <h2 className="section-heading text-center">Services We Offer</h2>
@@ -193,7 +193,7 @@ export default function Home() {
               whileInView="show"
               viewport={{ once: true, margin: '-80px' }}
             >
-              <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+              <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
                 Why Choose Us
               </span>
               <h2 className="section-heading">Why Pinecore Lab?</h2>
@@ -249,26 +249,26 @@ export default function Home() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-80px' }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-600 to-indigo-700 p-12 md:p-16 text-center"
+            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-500 via-sky-500 to-sky-600 p-12 md:p-16 text-center"
           >
             {/* Background decoration */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-2xl" />
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-indigo-400/20 blur-2xl" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-sky-400/20 blur-2xl" />
             </div>
 
             <div className="relative">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
                 Ready to Build Something Great?
               </h2>
-              <p className="text-blue-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="text-sky-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                 Tell us about your project — we'd love to help turn your idea
                 into a polished, production-ready digital product.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-blue-900/20 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-sky-600 hover:bg-sky-50 font-semibold px-8 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-sky-900/20 active:scale-95"
                 >
                   Contact Us Today
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

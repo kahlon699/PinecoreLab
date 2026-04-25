@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import axios from 'axios'
 
 const initialState = { name: '', email: '', message: '' }
@@ -37,7 +37,7 @@ export default function ContactForm() {
   }
 
   const inputClass = (name) =>
-    `w-full px-4 py-3 rounded-xl border text-sm bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 dark:focus:border-blue-400 transition-all duration-150 ${
+    `w-full px-4 py-3 rounded-xl border text-sm bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-sky-400/40 focus:border-sky-400 dark:focus:border-sky-400 transition-all duration-150 ${
       errors[name]
         ? 'border-red-400 dark:border-red-700 bg-red-50 dark:bg-red-950/20'
         : 'border-zinc-200 dark:border-zinc-700'

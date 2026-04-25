@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ServicesGrid from '../components/ServicesGrid'
 
@@ -12,7 +12,7 @@ const process = [
     step: '01',
     title: 'Discovery',
     desc: 'Deep-dive sessions to understand your business goals, users, and technical constraints.',
-    color: 'text-blue-600 dark:text-blue-400',
+    color: 'text-sky-500 dark:text-sky-400',
   },
   {
     step: '02',
@@ -55,7 +55,7 @@ const techStack = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    color: 'text-blue-600 bg-blue-50 dark:bg-blue-950/50 dark:text-blue-400',
+    color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/50 dark:text-sky-400',
   },
   {
     category: 'Mobile',
@@ -95,7 +95,7 @@ export default function Services() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-white dark:bg-zinc-950 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50 dark:bg-blue-950/15 rounded-full -translate-y-1/2 blur-3xl opacity-70" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-sky-50 dark:bg-sky-950/15 rounded-full -translate-y-1/2 blur-3xl opacity-70" />
         </div>
         <div className="max-w-7xl mx-auto relative text-center">
           <motion.div
@@ -103,13 +103,13 @@ export default function Services() {
             initial="hidden"
             animate="show"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-4">
               Services
             </span>
             <h1 className="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-6">
               Full-Cycle Digital
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent">
                 Product Development
               </span>
             </h1>
@@ -138,7 +138,7 @@ export default function Services() {
             viewport={{ once: true, margin: '-80px' }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
               Our Process
             </span>
             <h2 className="section-heading text-center">How We Work</h2>
@@ -179,7 +179,7 @@ export default function Services() {
             viewport={{ once: true, margin: '-80px' }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
               Tech Stack
             </span>
             <h2 className="section-heading text-center">Technologies We Use</h2>
@@ -225,22 +225,22 @@ export default function Services() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-80px' }}
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-600 via-blue-600 to-indigo-700 p-12 md:p-16 text-center"
+            className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-500 via-sky-500 to-sky-600 p-12 md:p-16 text-center"
           >
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/10 blur-2xl" />
-              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-indigo-400/20 blur-2xl" />
+              <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-sky-400/20 blur-2xl" />
             </div>
             <div className="relative">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
                 Have a Project in Mind?
               </h2>
-              <p className="text-blue-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              <p className="text-sky-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
                 Let's talk about what you're building and how Pinecore Lab can help make it real.
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-blue-900/20 active:scale-95"
+                className="inline-flex items-center gap-2 bg-white text-sky-600 hover:bg-sky-50 font-semibold px-8 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-sky-900/20 active:scale-95"
               >
                 Start a Conversation
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

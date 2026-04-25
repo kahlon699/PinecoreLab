@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
 const services = [
   'Web Development',
@@ -30,7 +30,7 @@ export default function Footer() {
                 <img src="/icons.svg" alt="Pinecore Lab" className="h-6 w-6" />
               </div>
               <span className="font-semibold text-white text-lg tracking-tight">
-                Pinecore <span className="text-blue-500">Lab</span>
+                Pinecore <span className="text-sky-400">Lab</span>
               </span>
             </Link>
             <p className="text-sm text-zinc-400 max-w-xs leading-relaxed mb-6">
@@ -41,7 +41,7 @@ export default function Footer() {
               href="mailto:contact@pinecorelab.com"
               className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-150 group"
             >
-              <svg className="w-4 h-4 text-zinc-500 group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-zinc-500 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75}
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>

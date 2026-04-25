@@ -1,4 +1,4 @@
-export default function TermsOfService() {
+﻿export default function TermsOfService() {
   return (
     <section className="pt-24 pb-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +108,7 @@ export default function TermsOfService() {
             <h2 className="text-lg font-semibold text-gray-900 mb-3">11. Contact</h2>
             <p>
               If you have questions about these Terms, please contact us at{' '}
-              <a href="mailto:contact@pinecorelab.com" className="text-blue-600 hover:underline">
+              <a href="mailto:contact@pinecorelab.com" className="text-sky-500 hover:underline">
                 contact@pinecorelab.com
               </a>.
             </p>

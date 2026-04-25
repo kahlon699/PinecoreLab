@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const fadeUp = (delay = 0) => ({
@@ -16,7 +16,7 @@ const values = [
     ),
     title: 'Engineering Excellence',
     desc: 'We hold our code to the highest standards — readable, tested, and architected for the long term.',
-    color: 'text-blue-600 bg-blue-50 dark:bg-blue-950/50 dark:text-blue-400',
+    color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/50 dark:text-sky-400',
   },
   {
     icon: (
@@ -55,7 +55,7 @@ const team = [
     name: 'Engineering Team',
     role: 'Full-Stack Development',
     initials: 'ET',
-    color: 'bg-blue-600',
+    color: 'bg-sky-500',
     desc: 'React, .NET, Node.js, TypeScript',
   },
   {
@@ -89,7 +89,7 @@ export default function About() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-white dark:bg-zinc-950 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 dark:bg-blue-950/15 rounded-full -translate-y-1/3 translate-x-1/4 blur-3xl opacity-70" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 dark:bg-sky-950/15 rounded-full -translate-y-1/3 translate-x-1/4 blur-3xl opacity-70" />
         </div>
         <div className="max-w-7xl mx-auto relative">
           <motion.div
@@ -98,13 +98,13 @@ export default function About() {
             animate="show"
             className="max-w-2xl"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-4">
               About Us
             </span>
             <h1 className="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-6">
               We Build Software
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent">
                 That Matters
               </span>
             </h1>
@@ -127,7 +127,7 @@ export default function About() {
               whileInView="show"
               viewport={{ once: true, margin: '-80px' }}
             >
-              <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+              <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
                 Our Mission
               </span>
               <h2 className="section-heading">Empowering Business Through Technology</h2>
@@ -152,17 +152,17 @@ export default function About() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: '-80px' }}
-              className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 p-8 text-white"
+              className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-white"
             >
               <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-xl" />
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-indigo-400/20 blur-xl" />
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-sky-400/20 blur-xl" />
               </div>
               <div className="relative">
                 <h3 className="text-lg font-bold mb-6 tracking-tight">What Defines Us</h3>
                 <ul className="space-y-3.5">
                   {definedBy.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-blue-100">
+                    <li key={item} className="flex items-center gap-3 text-sky-100">
                       <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
@@ -186,7 +186,7 @@ export default function About() {
             viewport={{ once: true, margin: '-80px' }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
               Our Values
             </span>
             <h2 className="section-heading text-center">Core Principles</h2>
@@ -227,7 +227,7 @@ export default function About() {
             viewport={{ once: true, margin: '-80px' }}
             className="text-center mb-14"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-3">
               Our Teams
             </span>
             <h2 className="section-heading text-center">Dedicated Specialists</h2>
@@ -251,7 +251,7 @@ export default function About() {
                   {initials}
                 </div>
                 <h3 className="font-semibold text-zinc-900 dark:text-white text-sm tracking-tight">{name}</h3>
-                <p className="text-blue-600 dark:text-blue-400 text-xs font-medium mt-1">{role}</p>
+                <p className="text-sky-500 dark:text-sky-400 text-xs font-medium mt-1">{role}</p>
                 <p className="text-zinc-400 dark:text-zinc-500 text-xs mt-2">{desc}</p>
               </motion.div>
             ))}

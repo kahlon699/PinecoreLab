@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 
 const services = [
   {
@@ -10,8 +10,8 @@ const services = [
     ),
     title: 'Web Development',
     description: 'Fast, responsive, and SEO-optimized websites and web applications using React, Next.js, and .NET.',
-    iconBg: 'bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400',
-    accent: 'group-hover:border-blue-200 dark:group-hover:border-blue-900',
+    iconBg: 'bg-sky-50 dark:bg-sky-950/50 text-sky-500 dark:text-sky-400',
+    accent: 'group-hover:border-sky-200 dark:group-hover:border-sky-900',
   },
   {
     icon: (

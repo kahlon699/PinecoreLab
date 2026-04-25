@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import ContactForm from '../components/ContactForm'
 
 const fadeUp = (delay = 0) => ({
@@ -17,7 +17,7 @@ const contactInfo = [
     label: 'Email',
     value: 'contact@pinecorelab.com',
     href: 'mailto:contact@pinecorelab.com',
-    color: 'text-blue-600 bg-blue-50 dark:bg-blue-950/50 dark:text-blue-400',
+    color: 'text-sky-500 bg-sky-50 dark:bg-sky-950/50 dark:text-sky-400',
   },
   {
     icon: (
@@ -59,13 +59,13 @@ export default function Contact() {
             initial="hidden"
             animate="show"
           >
-            <span className="inline-block text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
+            <span className="inline-block text-xs font-semibold text-sky-500 dark:text-sky-400 uppercase tracking-widest mb-4">
               Contact
             </span>
             <h1 className="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white leading-tight tracking-tight mb-5">
               Let's Start a
               <br />
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent">
                 Conversation
               </span>
             </h1>
@@ -107,7 +107,7 @@ export default function Contact() {
                     <div>
                       <p className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mb-0.5">{label}</p>
                       {href ? (
-                        <a href={href} className="text-zinc-800 dark:text-zinc-200 text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        <a href={href} className="text-zinc-800 dark:text-zinc-200 text-sm font-medium hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
                           {value}
                         </a>
                       ) : (

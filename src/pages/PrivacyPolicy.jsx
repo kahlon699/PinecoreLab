@@ -1,4 +1,4 @@
-export default function PrivacyPolicy() {
+﻿export default function PrivacyPolicy() {
   return (
     <section className="pt-24 pb-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
             </ul>
             <p className="mt-3">
               To exercise these rights, contact us at{' '}
-              <a href="mailto:contact@pinecorelab.com" className="text-blue-600 hover:underline">
+              <a href="mailto:contact@pinecorelab.com" className="text-sky-500 hover:underline">
                 contact@pinecorelab.com
               </a>.
             </p>
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-lg font-semibold text-gray-900 mb-3">9. Contact Us</h2>
             <p>
               If you have questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:contact@pinecorelab.com" className="text-blue-600 hover:underline">
+              <a href="mailto:contact@pinecorelab.com" className="text-sky-500 hover:underline">
                 contact@pinecorelab.com
               </a>.
             </p>

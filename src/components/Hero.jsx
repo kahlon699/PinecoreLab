@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const fadeUp = {
@@ -21,9 +21,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#060d1b] pt-16">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-blue-600/15 blur-3xl" />
-        <div className="absolute -bottom-60 -right-40 w-[600px] h-[600px] rounded-full bg-indigo-600/10 blur-3xl" />
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-blue-500/8 blur-2xl" />
+        <div className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full bg-sky-500/15 blur-3xl" />
+        <div className="absolute -bottom-60 -right-40 w-[600px] h-[600px] rounded-full bg-sky-500/10 blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-sky-400/8 blur-2xl" />
         {/* Dot grid */}
         <div
           className="absolute inset-0 opacity-[0.07]"
@@ -38,10 +38,10 @@ export default function Hero() {
         <div className="max-w-4xl">
           {/* Badge */}
           <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show">
-            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold bg-blue-950/60 text-blue-300 border border-blue-800/60 mb-8 tracking-wide uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold bg-sky-950/60 text-sky-300 border border-sky-800/60 mb-8 tracking-wide uppercase">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-400" />
               </span>
               Software &amp; App Development
             </span>
@@ -57,7 +57,7 @@ export default function Hero() {
           >
             We're The Best
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 via-sky-300 to-sky-400 bg-clip-text text-transparent">
               Tech Leading Company
             </span>
           </motion.h1>

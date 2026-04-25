@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../App'
@@ -56,7 +56,7 @@ export default function Navbar() {
             <img src="/icons.svg" alt="" className="h-6 w-6" />
           </div>
           <span className="font-semibold text-white text-lg tracking-tight">
-            Pinecore <span className="text-blue-400">Lab</span>
+            Pinecore <span className="text-sky-400">Lab</span>
           </span>
         </Link>
 
@@ -96,7 +96,7 @@ export default function Navbar() {
           </button>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-2 px-5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+            className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm py-2 px-5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-sky-400/25 active:scale-95"
           >
             Get a Quote
           </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
               <div className="pt-2 pb-1">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 w-full active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 w-full active:scale-95"
                 >
                   Get a Quote
                 </Link>
