@@ -52,12 +52,12 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500 transition-transform duration-200 group-hover:scale-105">
-            <img src="/icons.svg" alt="" className="h-6 w-6 invert" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg  transition-transform duration-200 group-hover:scale-105">
+           <img src="/icons.svg" alt="Pinecore Lab" className="h-10 w-10" />
           </div>
           <span className="font-semibold text-slate-800 text-lg tracking-tight">
             Pinecore <span className="text-sky-500">Lab</span>
-          </span>
+          </span>      
         </Link>
 
         {/* Desktop Nav */}
