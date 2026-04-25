@@ -45,20 +45,18 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/85 dark:bg-zinc-950/85 backdrop-blur-xl border-b border-zinc-200/60 dark:border-zinc-800/60 shadow-sm shadow-zinc-900/5'
-          : 'bg-transparent border-b border-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-950 border-b border-zinc-800/80 ${
+        scrolled ? 'shadow-md shadow-black/40' : 'border-b-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-zinc-900 dark:bg-white transition-transform duration-200 group-hover:scale-105">
-            <img src="/icons_black.svg" alt="" className="h-6 w-6 dark:invert" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white transition-transform duration-200 group-hover:scale-105">
+            <img src="/icons.svg" alt="" className="h-6 w-6" />
           </div>
-          <span className="font-semibold text-zinc-900 dark:text-white text-lg tracking-tight">
-            Pinecore <span className="text-blue-600">Lab</span>
+          <span className="font-semibold text-white text-lg tracking-tight">
+            Pinecore <span className="text-blue-400">Lab</span>
           </span>
         </Link>
 
@@ -70,14 +68,14 @@ export default function Navbar() {
                 to={to}
                 className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 block ${
                   location.pathname === to
-                    ? 'text-zinc-900 dark:text-white'
-                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                    ? 'text-white'
+                    : 'text-zinc-400 hover:text-white'
                 }`}
               >
                 {location.pathname === to && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800 rounded-lg -z-10"
+                    className="absolute inset-0 bg-zinc-800 rounded-lg -z-10"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
                   />
                 )}
@@ -91,13 +89,16 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-150"
+            className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-150"
             aria-label="Toggle theme"
           >
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
-          <Link to="/contact" className="btn-primary text-sm py-2 px-5">
-            Get in Touch
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-2 px-5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-blue-500/25 active:scale-95"
+          >
+            Get a Quote
           </Link>
         </div>
 
@@ -105,13 +106,13 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-1">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-2 rounded-lg text-zinc-400 hover:bg-zinc-800 transition-colors"
             aria-label="Toggle theme"
           >
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
           <button
-            className="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-2 rounded-lg text-zinc-400 hover:bg-zinc-800 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -136,7 +137,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border-t border-zinc-100 dark:border-zinc-800"
+            className="md:hidden overflow-hidden bg-zinc-950 border-t border-zinc-800"
           >
             <div className="px-4 py-3 space-y-1">
               {navLinks.map(({ label, to }) => (
@@ -145,16 +146,19 @@ export default function Navbar() {
                   to={to}
                   className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                     location.pathname === to
-                      ? 'text-zinc-900 dark:text-white bg-zinc-100 dark:bg-zinc-800'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900/50'
+                      ? 'text-white bg-zinc-800'
+                      : 'text-zinc-400 hover:bg-zinc-900 hover:text-white'
                   }`}
                 >
                   {label}
                 </Link>
               ))}
               <div className="pt-2 pb-1">
-                <Link to="/contact" className="btn-primary text-sm w-full justify-center">
-                  Get in Touch
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm py-2.5 px-5 rounded-xl transition-all duration-200 w-full active:scale-95"
+                >
+                  Get a Quote
                 </Link>
               </div>
             </div>

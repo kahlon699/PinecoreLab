@@ -1,7 +1,42 @@
+import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServicesGrid from '../components/ServicesGrid'
+
+const counterStats = [
+  { value: 200, suffix: '+', label: 'Projects Completed' },
+  { value: 50, suffix: 'K+', label: 'Lines of Code Written' },
+  { value: 5, suffix: '+', label: 'Years Experience' },
+  { value: 100, suffix: '%', label: 'Client Satisfaction' },
+]
+
+function CounterStat({ value, suffix, label }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true })
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!inView) return
+    const duration = 2000
+    const startTime = performance.now()
+    const step = (timestamp) => {
+      const progress = Math.min((timestamp - startTime) / duration, 1)
+      setCount(Math.floor(progress * value))
+      if (progress < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [inView, value])
+
+  return (
+    <div ref={ref} className="text-center">
+      <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
+        {count}{suffix}
+      </div>
+      <div className="text-blue-200 text-sm font-medium">{label}</div>
+    </div>
+  )
+}
 
 const techBadges = [
   'React', 'React Native', '.NET 8', 'Node.js', 'Flutter', 'AWS', 'Azure', 'Docker', 'TypeScript', 'PostgreSQL',
@@ -78,6 +113,17 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* Stats counter */}
+      <section className="bg-blue-700 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+            {counterStats.map((stat) => (
+              <CounterStat key={stat.label} {...stat} />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Tech logos strip */}
       <section className="bg-zinc-50 dark:bg-zinc-900/50 border-y border-zinc-100 dark:border-zinc-800 py-10">
