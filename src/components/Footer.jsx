@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const services = [
   'Web Development',
@@ -20,7 +20,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-zinc-950 text-zinc-400 border-t border-zinc-900">
+    <footer className="bg-sky-800 text-sky-200 border-t border-sky-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
           {/* Brand */}
@@ -30,18 +30,18 @@ export default function Footer() {
                 <img src="/icons.svg" alt="Pinecore Lab" className="h-6 w-6" />
               </div>
               <span className="font-semibold text-white text-lg tracking-tight">
-                Pinecore <span className="text-sky-400">Lab</span>
+                Pinecore <span className="text-sky-300">Lab</span>
               </span>
             </Link>
-            <p className="text-sm text-zinc-400 max-w-xs leading-relaxed mb-6">
+            <p className="text-sm text-sky-200/70 max-w-xs leading-relaxed mb-6">
               A software and app development company building modern, scalable
               digital products for businesses worldwide.
             </p>
             <a
               href="mailto:contact@pinecorelab.com"
-              className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition-colors duration-150 group"
+              className="inline-flex items-center gap-2 text-sm text-sky-200/70 hover:text-white transition-colors duration-150 group"
             >
-              <svg className="w-4 h-4 text-zinc-500 group-hover:text-sky-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-sky-300/60 group-hover:text-sky-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75}
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -51,13 +51,13 @@ export default function Footer() {
 
           {/* Services */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-widest mb-5">
+            <h3 className="text-xs font-semibold text-sky-100 uppercase tracking-widest mb-5">
               Services
             </h3>
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s}>
-                  <span className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors cursor-default">
+                  <span className="text-sm text-sky-200/60 hover:text-sky-100 transition-colors cursor-default">
                     {s}
                   </span>
                 </li>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           {/* Company */}
           <div className="md:col-span-4">
-            <h3 className="text-xs font-semibold text-zinc-300 uppercase tracking-widest mb-5">
+            <h3 className="text-xs font-semibold text-sky-100 uppercase tracking-widest mb-5">
               Company
             </h3>
             <ul className="space-y-3">
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors duration-150"
+                    className="text-sm text-sky-200/60 hover:text-sky-100 transition-colors duration-150"
                   >
                     {label}
                   </Link>
@@ -86,11 +86,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-zinc-800/80 pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-zinc-600">
+        <div className="border-t border-sky-700/60 pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-sky-300/60">
             &copy; {year} Pinecore Lab. All rights reserved.
           </p>
-          <p className="text-xs text-zinc-600">
+          <p className="text-xs text-sky-300/60">
             Software &amp; App Development Company
           </p>
         </div>

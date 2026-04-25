@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../App'
@@ -45,18 +45,18 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-950 border-b border-zinc-800/80 ${
-        scrolled ? 'shadow-md shadow-black/40' : 'border-b-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-sky-100 ${
+        scrolled ? 'shadow-md shadow-sky-900/5' : ''
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group flex-shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white transition-transform duration-200 group-hover:scale-105">
-            <img src="/icons.svg" alt="" className="h-6 w-6" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-500 transition-transform duration-200 group-hover:scale-105">
+            <img src="/icons.svg" alt="" className="h-6 w-6 invert" />
           </div>
-          <span className="font-semibold text-white text-lg tracking-tight">
-            Pinecore <span className="text-sky-400">Lab</span>
+          <span className="font-semibold text-slate-800 text-lg tracking-tight">
+            Pinecore <span className="text-sky-500">Lab</span>
           </span>
         </Link>
 
@@ -68,14 +68,14 @@ export default function Navbar() {
                 to={to}
                 className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 block ${
                   location.pathname === to
-                    ? 'text-white'
-                    : 'text-zinc-400 hover:text-white'
+                    ? 'text-sky-600'
+                    : 'text-slate-500 hover:text-sky-600'
                 }`}
               >
                 {location.pathname === to && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-zinc-800 rounded-lg -z-10"
+                    className="absolute inset-0 bg-sky-50 rounded-lg -z-10"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
                   />
                 )}
@@ -89,14 +89,14 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all duration-150"
+            className="p-2 rounded-lg text-slate-400 hover:text-sky-600 hover:bg-sky-50 transition-all duration-150"
             aria-label="Toggle theme"
           >
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm py-2 px-5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-sky-400/25 active:scale-95"
+            className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-sm py-2 px-5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-lg hover:shadow-sky-400/30 active:scale-95"
           >
             Get a Quote
           </Link>
@@ -106,13 +106,13 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-1">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-400 hover:bg-zinc-800 transition-colors"
+            className="p-2 rounded-lg text-slate-400 hover:bg-sky-50 transition-colors"
             aria-label="Toggle theme"
           >
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
           <button
-            className="p-2 rounded-lg text-zinc-400 hover:bg-zinc-800 transition-colors"
+            className="p-2 rounded-lg text-slate-500 hover:bg-sky-50 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -137,7 +137,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden bg-zinc-950 border-t border-zinc-800"
+            className="md:hidden overflow-hidden bg-white border-t border-sky-100"
           >
             <div className="px-4 py-3 space-y-1">
               {navLinks.map(({ label, to }) => (
@@ -146,8 +146,8 @@ export default function Navbar() {
                   to={to}
                   className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                     location.pathname === to
-                      ? 'text-white bg-zinc-800'
-                      : 'text-zinc-400 hover:bg-zinc-900 hover:text-white'
+                      ? 'text-sky-600 bg-sky-50'
+                      : 'text-slate-500 hover:bg-sky-50 hover:text-sky-600'
                   }`}
                 >
                   {label}
